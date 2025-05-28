@@ -276,6 +276,12 @@ def user_home():
     return render_template('index.html', weather=weather, chart_data=chart_data,
         weather_type=weather_type)
 
+from flask import redirect
+
+@app.route('/')
+def redirect_to_main():
+    return redirect('/main')
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
