@@ -278,7 +278,7 @@ def user_home():
 
 from flask import redirect
 
-@app.route('/')
+@app.route('/', methods=['GET', 'HEAD'])
 def redirect_to_main():
     return redirect('/main')
 
