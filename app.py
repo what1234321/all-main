@@ -34,7 +34,7 @@ def save_groups(groups):
     with open(FAV_FILE, 'w', encoding='utf-8') as f:
         json.dump(groups, f, ensure_ascii=False, indent=2)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'HEAD'])
 def home():
     # 기본값 설정
     city_input = request.args.get('city', default='Seoul')
