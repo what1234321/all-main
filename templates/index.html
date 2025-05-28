@@ -108,6 +108,7 @@
       <li><strong>강수량(1시간):</strong> <span id="rain">{{ weather.rain }}</span> mm</li>
       <li><strong>습도:</strong> <span id="humidity">{{ weather.humidity }}</span>%</li>
       <li><strong>설명:</strong> <span id="desc">{{ weather.description }}</span></li>
+    {% if weather.delta_temp is defined %}
       <li><strong>기온 변화:</strong>
                 {% if weather.delta_temp is not none %}
                     {% if weather.delta_temp > 0 %}+{{ weather.delta_temp }}°C (상승)
@@ -115,6 +116,7 @@
                     {% else %}변화 없음{% endif %}
                 {% else %}-{% endif %}
             </li>
+      {% endif %}
             <li><strong>습도 변화:</strong>
                 {% if weather.delta_humidity is not none %}
                     {% if weather.delta_humidity > 0 %}+{{ weather.delta_humidity }}% (상승)
